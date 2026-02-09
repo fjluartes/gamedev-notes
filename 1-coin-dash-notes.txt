@@ -44,7 +44,9 @@ Player scene
 	- If velocity > 0 - run, else idle
 		- flip_h - flip sprite when moving to the left
 - Starting/ending player movement
-
+	- Main scene informs player when game has started or ended
+	- start() and die() functions. 
+	- set_process(bool) - starts or stops the _process() function
 
 Using Area2D to detect when objects touch
 - Collision detection
