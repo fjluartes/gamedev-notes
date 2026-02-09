@@ -1,0 +1,49 @@
+GAMEDEV/GODOT NOTES
+Book: Godot 4 Game Development Projects - Chris Bradfield
+- Coin Dash
+- Space Rocks (asteroids clone)
+- Jungle Jump (2D platformer)
+- 3D Minigolf (3D game)
+- Infinite Flyer (full 3D game)
+    
+At the end of each chapter, once finished with building the game project, delete immediately and start over.
+    - Recreate without looking at the book. 
+
+Finish small projects first before moving to bigger projects. 
+- 2-3 small projects finished vs 1 large, incomplete project
+
+Game Engine
+- Rendering (2D and 3D)
+- Physics
+- Platform Support
+- Common Dev Environment
+
+Godot
+    - GDScript or C#
+    
+Node
+- building blocks for creating games in Godot.
+e.g. Display an image, play animation, 3D model, etc.
+- Contains collection of properties to customize behavior
+- Nodes are organized into a tree structure
+
+Scene
+- Group of nodes collected into a tree
+- Used to create and organize various game objects in a project
+    
+Signals
+- Functions that connect different game objects
+
+
+Vectors and 2D Space
+
+(0, 0)
+------------> X-axis
+|\
+|  \
+|    \ 
+|      (4, 3)
+v
+Y-axis
+- Downward Y-axis = positive
+- Common in computer graphics (vs traditional cartesian coordinate system)

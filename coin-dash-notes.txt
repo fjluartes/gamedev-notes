@@ -1,0 +1,59 @@
+COIN DASH
+- Game 1 of Godot 4 book
+- Collect coins before time runs out
+
+NOTES
+Setting up New Project
+- Project > Project Settings
+- Viewport height/width: 720x480 (portrait)
+- Stretch - Mode - canvas_items, Aspect - Keep
+Player scene
+- Display character w/ animations
+- Respond to usesr input
+- Detect collision
+- "Area2D" Node
+	- 2D node, can move in 2D space, can detect overlap with other nodes
+- Click "Group Selected Node" icon to avoid accidental changes in node
+- "AnimatedSprite2D" node
+	- Handles appearance and animations
+	- Animations - 5 to 8 FPS, Autoplay on Load for default sprite animation
+	- Transform > Scale to change size
+	- Use "Offset" property to center AnimatedSprite2D. Sprite images are not centered vertically.
+- CollisionShape2D
+	- "Hitbox" of the sprite i.e. shape of the sprite for collision
+	- RectangleShape2D, CapsuleShape2D, etc.
+- Scripting the player
+	- Click Scripting icon to add scripts (GDScript) to Player scene.
+	- Using @export annotation on "speed" variable allows setting the value in Inspector window.
+- Moving the player
+	- Use _process() function to define player movement
+	- _process() function is called on every frame
+	- Player does 3 things:
+		- Check keyboard input
+		- Move in given direction
+		- Play animation
+	- Project Settings > Input Map, Input.is_action_pressed()
+	- Input.get_vector() - handles input in 4 directions
+	- Clamp() - set min and max positions to prevent objects from leaving the screen
+- Delta
+	- Elapsed time since previous frame
+	- Game engine runs at 60 FPS (frames per second)
+	- If frame rate is not consistent, it affects object movement in game
+	- ~16ms. e.g. 600 pixels/sec * delta = 10 pixels movement
+- Choosing animations
+	- If velocity > 0 - run, else idle
+		- flip_h - flip sprite when moving to the left
+- Starting/ending player movement
+
+
+Using Area2D to detect when objects touch
+- Collision detection
+
+
+Using Control nodes to display information
+
+
+Communicating between game objects using signals
+
+
+
