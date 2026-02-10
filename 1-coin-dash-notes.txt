@@ -66,8 +66,16 @@ Scene > New Scene
 - Area2D
 	- AnimatedSprite2D
 	- CollisionShape2D
+- Animation Speed - 12FPS
+- Scale: (0.4, 0.4)
+- CollisionShape2D - CircleShape2D
+- Groups
+	- group similar nodes
 - queue_free()
 	- Godot's method for removing nodes
 	- Adds object to a queue to be deleted at end of frame
 
-
+MAIN SCENE
+Scene > New Scene
+- Background - TextureRect
+- GameTimer - Timer node
