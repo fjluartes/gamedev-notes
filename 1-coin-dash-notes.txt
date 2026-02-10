@@ -7,10 +7,13 @@ Setting up New Project
 - Project > Project Settings
 - Viewport height/width: 720x480 (portrait)
 - Stretch - Mode - canvas_items, Aspect - Keep
-Player scene
+PLAYER SCENE
 - Display character w/ animations
 - Respond to usesr input
 - Detect collision
+- Area2D
+	- AnimatedSprite2D
+	- CollisionShape2D
 - "Area2D" Node
 	- 2D node, can move in 2D space, can detect overlap with other nodes
 - Click "Group Selected Node" icon to avoid accidental changes in node
@@ -47,15 +50,24 @@ Player scene
 	- Main scene informs player when game has started or ended
 	- start() and die() functions. 
 	- set_process(bool) - starts or stops the _process() function
+- Signals
+	- Way for nodes to send out messages that other nodes can detect/react
+	- e.g. body colliding, button being pressed, etc.
+	- signal pickup
+	- signal hurt
+		- Signals that player will emit when they touch a coin or obstacle
+	- area_entered
+		- signal to detect collision
+		- other nodes will also be Area2D nodes
+		- creates _on_area_entered(area) function
 
-Using Area2D to detect when objects touch
-- Collision detection
-
-
-Using Control nodes to display information
-
-
-Communicating between game objects using signals
-
+COIN SCENE
+Scene > New Scene
+- Area2D
+	- AnimatedSprite2D
+	- CollisionShape2D
+- queue_free()
+	- Godot's method for removing nodes
+	- Adds object to a queue to be deleted at end of frame
 
 
