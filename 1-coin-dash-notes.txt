@@ -86,9 +86,11 @@ Scene > New Scene
 	- @export allows variables to appear in Inspector tab
 	- get_viewport().get_visible_rect().size
 	- $Player - call player scene in main
+		- add player as child scene: Main > Instantiate Child Scene > select player.tscn
 - Starting a new game
 	- new_game()
 		- $Player.start(), $Player.show(), $GameTimer.start(), spawn_coins()
+		- add new_game() to _ready() to test
 	- spawn_coins()
 		- spawn coin scene in random positions
 		- c = coin_scene.instantiate()
@@ -96,4 +98,11 @@ Scene > New Scene
 		- c.position, randi_range(0, screensize.x) & screensize.y
 
 USER INTERFACE
-- 
+- HUD - heads up display
+	- score, time remaining, Game Over message, start button
+- Node setup
+	- CanvasLayer, Control, Label message
+	
+FINISHING UP
+- Visual effects
+	- tween
