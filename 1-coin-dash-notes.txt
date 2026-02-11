@@ -7,6 +7,7 @@ Setting up New Project
 - Project > Project Settings
 - Viewport height/width: 720x480 (portrait)
 - Stretch - Mode - canvas_items, Aspect - Keep
+
 PLAYER SCENE
 - Display character w/ animations
 - Respond to usesr input
@@ -78,4 +79,21 @@ Scene > New Scene
 MAIN SCENE
 Scene > New Scene
 - Background - TextureRect
+	- grass.png, Stretch Mode - tile, Full rect size
 - GameTimer - Timer node
+- Script
+	- @export var coin_scene, playtime
+	- @export allows variables to appear in Inspector tab
+	- get_viewport().get_visible_rect().size
+	- $Player - call player scene in main
+- Starting a new game
+	- new_game()
+		- $Player.start(), $Player.show(), $GameTimer.start(), spawn_coins()
+	- spawn_coins()
+		- spawn coin scene in random positions
+		- c = coin_scene.instantiate()
+		- add_child(c)
+		- c.position, randi_range(0, screensize.x) & screensize.y
+
+USER INTERFACE
+- 
