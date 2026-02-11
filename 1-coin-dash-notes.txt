@@ -12,7 +12,7 @@ PLAYER SCENE
 - Display character w/ animations
 - Respond to usesr input
 - Detect collision
-- Area2D
+- Player (Area2D)
 	- AnimatedSprite2D
 	- CollisionShape2D
 - "Area2D" Node
@@ -64,7 +64,7 @@ PLAYER SCENE
 
 COIN SCENE
 Scene > New Scene
-- Area2D
+- Coin (Area2D)
 	- AnimatedSprite2D
 	- CollisionShape2D
 - Animation Speed - 12FPS
@@ -100,13 +100,38 @@ Scene > New Scene
 USER INTERFACE
 - HUD - heads up display
 	- score, time remaining, Game Over message, start button
-- CanvasLayer
-	- Label
+- HUD (CanvasLayer)
+	- Message (Label)
+	- MarginContainer
+		- Score (Label)
+		- Time (Label)
+	- Timer
+	- StartButton (Button)
 - Label - message: Game title, Game Over message
 	- Label Settings, Font (add font), edit font size
 - Score and time display
 	- Label nodes but uses Container node to manage position (MarginContainer)
+	- MarginContainer - 10px - adds margin on top of screen for score and time
+	- Score/Time - set Horizontal/Vertical Alignment
+- Timer
+	- Wait Time 2s, One Shot On
+	- connect timeout() signal to HUD
+		- creates _on_timer_timeout()
+- StartButton
+	- Text: Start, layout Center Bottom, add font
+	- when button is pressed, it emits a signal
+		- $StartButton.hide(), $Message.hide(), start_game.emit()
+- Game Over
+	- show_game_over()
 	
 FINISHING UP
 - Visual effects
 	- tween
+- Sound
+
+- Powerups
+
+- Coin animation
+
+- Obstacles
+	- Cactus
