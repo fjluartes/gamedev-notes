@@ -119,11 +119,18 @@ USER INTERFACE
 		- creates _on_timer_timeout()
 - StartButton
 	- Text: Start, layout Center Bottom, add font
+	- connect pressed() signal to HUD
 	- when button is pressed, it emits a signal
 		- $StartButton.hide(), $Message.hide(), start_game.emit()
 - Game Over
 	- show_game_over()
-	
+- Add HUD to Main scene
+	- Add HUD scene instance to Main
+	- In Main, connect timeout signal of GameTimer
+	- Connect pickup and hurt signals
+	- game_over() function
+		- call_group() to remove all remaining coins via queue_free() call
+
 FINISHING UP
 - Visual effects
 	- tween
