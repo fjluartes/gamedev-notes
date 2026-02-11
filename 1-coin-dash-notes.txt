@@ -100,8 +100,12 @@ Scene > New Scene
 USER INTERFACE
 - HUD - heads up display
 	- score, time remaining, Game Over message, start button
-- Node setup
-	- CanvasLayer, Control, Label message
+- CanvasLayer
+	- Label
+- Label - message: Game title, Game Over message
+	- Label Settings, Font (add font), edit font size
+- Score and time display
+	- Label nodes but uses Container node to manage position (MarginContainer)
 	
 FINISHING UP
 - Visual effects
