@@ -162,4 +162,7 @@ FINISHING UP
 	- Animation Looping Off, Speed 12FPS
 	- $Timer.start(randf_range(3, 8)) - random from 3-8s
 - Obstacles
-	- Cactus (Sprite2D)
+	- Cactus (Area2D)
+		- Sprite2D
+		- CollisionShape2D - RectangleShape2D
+	- Add on_area_entered(area) for obstacles on Coin scene
