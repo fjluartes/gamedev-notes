@@ -138,7 +138,15 @@ FINISHING UP
 	- tween - interpolate (change gradually) some value over time via math function
 		- "easing" - https://easings.net
 	- Add tween to coin when picked up
+		- Add on Coin scene - pickup()
+		- Disable collision first to avoid double trigger on area_entered
+		- create_tweeen, set_parallel, set_trans(Tween.TRANS_QUAD)
 - Sound
+	- AudioStreamPlayer2D node
+	- Ctrl-D to duplicate node
+	- $CoinSound - on_player_pickup()
+	- $EndSound.play() - game_over()
+	- $LevelSound.play - spawn_coins()
 
 - Powerups
 
