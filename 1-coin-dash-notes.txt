@@ -23,6 +23,7 @@ PLAYER SCENE
 	- Animations - 5 to 8 FPS, Autoplay on Load for default sprite animation
 	- Transform > Scale to change size
 	- Use "Offset" property to center AnimatedSprite2D. Sprite images are not centered vertically.
+		- y = -5px 
 - CollisionShape2D
 	- "Hitbox" of the sprite i.e. shape of the sprite for collision
 	- RectangleShape2D, CapsuleShape2D, etc.
