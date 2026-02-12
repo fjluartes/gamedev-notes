@@ -132,8 +132,12 @@ USER INTERFACE
 		- call_group() to remove all remaining coins via queue_free() call
 
 FINISHING UP
+- Add sounds, visual effects, "juice"
+
 - Visual effects
-	- tween
+	- tween - interpolate (change gradually) some value over time via math function
+		- "easing" - https://easings.net
+	- Add tween to coin when picked up
 - Sound
 
 - Powerups
