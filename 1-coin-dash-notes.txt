@@ -96,6 +96,9 @@ Scene > New Scene
 		- c = coin_scene.instantiate()
 		- add_child(c)
 		- c.position, randi_range(0, screensize.x) & screensize.y
+	- _process(_delta)
+		- get_tree().get_nodes_in_group("coins").size() == 0
+			- check for remaining coins
 
 USER INTERFACE
 - HUD - heads up display
