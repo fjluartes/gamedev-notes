@@ -133,7 +133,6 @@ USER INTERFACE
 
 FINISHING UP
 - Add sounds, visual effects, "juice"
-
 - Visual effects
 	- tween - interpolate (change gradually) some value over time via math function
 		- "easing" - https://easings.net
@@ -147,8 +146,17 @@ FINISHING UP
 	- $CoinSound - on_player_pickup()
 	- $EndSound.play() - game_over()
 	- $LevelSound.play - spawn_coins()
-
 - Powerups
+	- small time bonus when collected
+	- appears for a short time then disappears
+	- similar to Coin scene
+	- Lifetime (Timer)
+	- @export var powerup_scene : PackedScene
+		- Add powerup_scene to Main
+	- Change player script
+		- _on_area_entered(area)
+	- Change main script
+		- _on_player_pickup(type) - coins or powerups
 
 - Coin animation
 
