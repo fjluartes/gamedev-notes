@@ -79,7 +79,7 @@ Scene > New Scene
 
 MAIN SCENE
 Scene > New Scene
-- Background - TextureRect
+- Background (TextureRect)
 	- grass.png, Stretch Mode - tile, Full rect size
 - GameTimer - Timer node
 - Script
