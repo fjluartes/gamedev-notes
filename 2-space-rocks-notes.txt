@@ -3,3 +3,9 @@ SPACE ROCKS
 - Asteroids clone
 
 NOTES
+Project Setup
+Project > Project Settings > Input Map
+- rotate_left, rotate_right, thrust, shoot
+
+Rigid Body physics
+- 
