@@ -147,9 +147,9 @@ FINISHING UP
 - Sound
 	- AudioStreamPlayer2D node
 	- Ctrl-D to duplicate node
-	- $CoinSound - on_player_pickup()
+	- $CoinSound.play() - on_player_pickup()
 	- $EndSound.play() - game_over()
-	- $LevelSound.play - spawn_coins()
+	- $LevelSound.play() - spawn_coins()
 - Powerups
 	- small time bonus when collected
 	- appears for a short time then disappears
