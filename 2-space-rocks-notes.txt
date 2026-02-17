@@ -8,4 +8,11 @@ Project > Project Settings > Input Map
 - rotate_left, rotate_right, thrust, shoot
 
 Rigid Body physics
-- 
+- StaticBody2D
+- RigidBody2D
+- CharacterBody2D
+Project > Project Settings > General > Physics > 2D
+
+For space ship and rocks
+- Use RigidBody2D
+- Area2D can also be used by using Space Override
