@@ -4,15 +4,32 @@ SPACE ROCKS
 
 NOTES
 Project Setup
-Project > Project Settings > Input Map
+Project Settings > Input Map
 - rotate_left, rotate_right, thrust, shoot
 
 Rigid Body physics
 - StaticBody2D
 - RigidBody2D
 - CharacterBody2D
-Project > Project Settings > General > Physics > 2D
+Project Settings > General > Physics > 2D
 
 For space ship and rocks
 - Use RigidBody2D
 - Area2D can also be used by using Space Override
+
+Player Ship
+Body and Physics setup
+Player (RigidBody2D)
+- Sprite2D
+- CollisionShape2D
+Sprite2D
+- Scale - (0.5, 0.5)
+- Rotation - 90
+CollisionShape2D
+- CircleShape2D
+Other
+- Project Settings > Rendering > Textures
+	- Default Texture Filter - Nearest
+
+State machines
+- Init, Alive, Invulnerable, Dead
