@@ -33,3 +33,7 @@ Other
 
 State machines
 - Init, Alive, Invulnerable, Dead
+
+Player controls
+if Input.is_action_pressed("thrust"):
+	thrust = transform.x * engine_power
