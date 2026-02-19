@@ -17,7 +17,7 @@ For space ship and rocks
 - Use RigidBody2D
 - Area2D can also be used by using Space Override
 
-Player Ship
+PLAYER'S SHIP
 Body and Physics setup
 Player (RigidBody2D)
 - Sprite2D
@@ -33,7 +33,64 @@ Other
 
 State machines
 - Init, Alive, Invulnerable, Dead
+- match new_state (switch)
+- $CollisionShape2D.set_deferred("disabled", true)
+	- For Invulnerable only
 
-Player controls
+Player Controls
+@export var engine_power = 500
+@export var spin_power = 8000
+thrust = Vector2.ZERO
+rotation_dir = 0
 if Input.is_action_pressed("thrust"):
 	thrust = transform.x * engine_power
+rotation_dir = Input.get_axis("rotate_left", "rotate_right")
+
+func _physics_process(delta):
+	constant_force = thrust
+	constant_torque = rotation_dir * spin_power
+
+Screen Wrap
+- If player goes off on one side of screen, appears on other side
+- Can't just use if position.x > screensize.x: position.x = 0
+	- use _integrate_forces on RigidBody2D
+
+func _integrate_forces(physics_state):
+	var xform = physics_state.transform
+	xform.origin.x = wrapf(xform.origin.x, 0, screensize.x)
+	xform.origin.y = wrapf(xform.origin.y, 0, screensize.y)
+	physics_state.transform = xform
+
+physics_state -> PhysicsDirectBodyState2D
+wrapf(<value>, <min-value>, <max-value>)
+
+SHOOTING
+Bullet scene
+Bullet (Area2D)
+- Sprite2D
+- CollisionShape2D
+- VisibleOnScreenNotifier2D
+
+@export var speed = 1000
+var velocity = Vector2.ZERO
+
+func start(_transform):
+	transform = _transform
+	velocity = transform.x * speed
+
+func _process(delta):
+	position += velocity * delta
+
+(signal)
+_on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()
+
+(signal)
+_on_bullet_body_entered(body):
+	if body.is_in_group("rocks"):
+		body.explode()
+		queue_free()
+
+
+ADDING THE ROCKS
+Rocks scene
