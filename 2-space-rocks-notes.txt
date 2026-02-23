@@ -148,3 +148,13 @@ func spawn_rock(size, pos=null, vel=null):
 	r.screensize = screensize
 	r.start(pos, vel, size)
 	call_deferred("add_child", r)
+
+Exploding rocks
+Explosion (Sprite2D)
+- AnimationPlayer
+Sprite2D
+- Vframes = 8, Hframes = 8 -> split sprite sheet to 64 images (0 - 63)
+AnimationPlayer
+- New > "explosion"
+- Animation Length = 0.64, Snap = 0.01
+key, keyframe
