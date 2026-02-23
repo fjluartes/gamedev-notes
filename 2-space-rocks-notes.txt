@@ -91,6 +91,59 @@ _on_bullet_body_entered(body):
 		body.explode()
 		queue_free()
 
+Main scene
+Main (Node2D)
+- Background (Sprite2D)
+- Player (PackedScene)
+- RockPath (Path2D)
 
 ADDING THE ROCKS
 Rocks scene
+Rock (RigidBody2D)
+- Sprite2D
+- CollisionShape2D
+
+Linear/Damp = 0
+Angular/Damp = 0
+Damp Mode (for both) = Replace
+PhysicsMaterial > Bounce = 1
+
+func start(_position, _velocity, _size):
+	position = _position
+	size = _size
+	mass = 1.5 * size
+	$Sprite2D.scale = Vector2.ONE * scale_factor * size
+	radius = int($Sprite2D.texture.get_size().x / 2 * $Sprite2D.scale.x)
+	var shape = CircleShape2D.new() # generate new circleshape for rock collision
+	shape.radius = radius
+	$CollisionShape2D.shape = shape
+	linear_velocity = _velocity
+	angular_velocity = randf_range(-PI, PI)
+
+func _integrate_forces(physics_state):
+	var xform = physics_state.transform
+	xform.origin.x = wrapf(xform.origin.x, 0 - radius, screensize.x + radius)
+	xform.origin.y = wrapf(xform.origin.y, 0 - radius, screensize.y + radius)
+	physics_state.transform = xform
+
+On Main Scene
+RockPath (Path2D)
+- RockSpawn (PathFollow2D)
+Add Point - top left corner then clockwise
+Close Curve
+
+func _ready() -> void:
+	screensize = get_viewport().get_visible_rect().size
+	for i in 3:
+		spawn_rock(3)
+
+func spawn_rock(size, pos=null, vel=null):
+	if pos == null:
+		$RockPath/RockSpawn.progress = randi()
+		pos = $RockPath/RockSpawn.position
+	if vel == null:
+		vel = Vector2.RIGHT.rotated(randf_range(0, TAU)) * randf_range(50, 125)
+	var r = rock_scene.instantiate()
+	r.screensize = screensize
+	r.start(pos, vel, size)
+	call_deferred("add_child", r)
