@@ -157,4 +157,21 @@ Sprite2D
 AnimationPlayer
 - New > "explosion"
 - Animation Length = 0.64, Snap = 0.01
+- Zoom in Animation track (right side is animation length)
 key, keyframe
+- Click key icon on Frame 0 and Frame 63 (start and end frames)
+- Set Frame = 0 in Time = 0.0 and Frame = 63 on Time = 0.63 (start and end frames)
+- Update Mode > Continuous
+Add explosion scene to Rock scene
+Rock scene
+- Add to start()
+	- $Explosion.scale = Vector2.ONE * 0.75 * size
+	
+Question
+- When to use?
+	- @export var explosion : PackedScene vs 
+	- $Explosion (add Explosion as child scene in Rock scene)
+
+Spawn smaller rocks
+- Rock emits exploded signal, Main listens for exploded and generate smaller rocks
+- r.exploded.connect(self._on_rock_exploded)
