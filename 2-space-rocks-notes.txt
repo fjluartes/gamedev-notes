@@ -175,3 +175,47 @@ Question
 Spawn smaller rocks
 - Rock emits exploded signal, Main listens for exploded and generate smaller rocks
 - r.exploded.connect(self._on_rock_exploded)
+
+CREATING THE UI
+* Control nodes
+- Start button
+- Status message (Get Ready, Game Over)
+- Score
+- Lives counter
+
+HUD (CanvasLayer)
+- Timer
+- MarginContainer
+	- HBoxContainer
+		- ScoreLabel
+		-LivesCounter
+			- L1
+			- L2
+			- L3
+	- VBoxContainer
+		- Message
+		- StartButton
+
+MarginContainer
+- Top Wide
+- Theme Overrides/Constants/Margins Top/Bot/Left/Right =  20
+Timer
+- One Shot = true
+- Wait Time = 2s
+ScoreLabel
+- Text = 0
+- Layout/Container Sizing/Horizontal - Expand = true
+- Label Settings - Font Size = 64
+LivesCounter
+- Theme Overrides/Constants/Separation = 20
+L1
+- Texture > Stretch Mode = Keep Aspect Centered
+VBoxContainer
+- Layout > Center Wide
+- Theme Overrides/Constants/Separation = 100
+StartButton
+- Textures/Normal, Textures/Hover
+- Layout/Container Sizing/Horizontal = Shrink Center
+Message
+- Text = "Space Rocks!"
+- Horizontal Alignment = Center
