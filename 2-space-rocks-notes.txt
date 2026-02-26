@@ -226,3 +226,4 @@ get_tree().call_group("rocks", "queue_free")
 - $Player.reset() - soon to be added
 - Connect HUD start_game signal to Main. 
 	- Click Pick button > select new_game() function
+- lives_changed - Connect > Connect to Script > HUD > update_lives
