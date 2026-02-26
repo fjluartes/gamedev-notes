@@ -219,3 +219,10 @@ StartButton
 Message
 - Text = "Space Rocks!"
 - Horizontal Alignment = Center
+
+Add HUD to Main scene
+get_tree().call_group("rocks", "queue_free")
+- removes old rocks from previous game
+- $Player.reset() - soon to be added
+- Connect HUD start_game signal to Main. 
+	- Click Pick button > select new_game() function
