@@ -200,7 +200,7 @@ MarginContainer
 - Top Wide
 - Theme Overrides/Constants/Margins Top/Bot/Left/Right =  20
 Timer
-- One Shot = true
+- One Shot = On
 - Wait Time = 2s
 ScoreLabel
 - Text = 0
@@ -227,3 +227,25 @@ get_tree().call_group("rocks", "queue_free")
 - Connect HUD start_game signal to Main. 
 	- Click Pick button > select new_game() function
 - lives_changed - Connect > Connect to Script > HUD > update_lives
+
+Ending the game
+Player scene
+- Add instance of Explosion scene, Visibility > Visible = Off
+- InvulnerabilityTimer (Timer)
+	- 
+- $Sprite2D.modulate.a = 0.5 (not ALIVE), 1.0 (ALIVE)
+- Dead
+	- $Sprite2D.hide()
+	- linear_velocity = Vector2.ZERO
+	- dead.emit()
+func _on_invulnerability_timer_timeout():
+	change_state(ALIVE)
+
+Rigid body collision
+- Contact Monitor
+Player scene
+- Inspector > Solver > Contact Monitor = On
+- Max Contacts Reported = 1
+- _on_body_entered(), explode()
+Main scene
+- Connect Player's dead signal to game_over()
