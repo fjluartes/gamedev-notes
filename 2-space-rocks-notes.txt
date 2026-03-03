@@ -253,3 +253,19 @@ Main scene
 Pausing the game
 - Stop physics thread, _process(), _physics_process()
 - _input() and _input_event() methods are not called for inputs 
+- Input Map > P - "pause"
+- Main node - Process/Mode = Always
+
+ENEMIES
+Following a path
+EnemyPaths (Node)
+- Path2D
+
+Enemy scene
+Enemy (Area2D)
+- Sprite2D
+- CollisionShape2D (CircleShape2D)
+- EnemyPaths scene
+- AnimationPlayer > flash
+- Explosion scene
+- GunCooldown (Timer)
