@@ -192,9 +192,9 @@ HUD (CanvasLayer)
 			- L1
 			- L2
 			- L3
-	- VBoxContainer
-		- Message
-		- StartButton
+- VBoxContainer
+	- Message
+	- StartButton
 
 MarginContainer
 - Top Wide
